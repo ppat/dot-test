@@ -36,5 +36,8 @@ while read -r plugin; do
   fi
 done < {{ .chezmoi.sourceDir }}/krew-plugins.txt  
 log_success "Krew Plugins | Krew plugins installed successfully!"
+echo
+log_info "Krew Plugins | Display installed packages..."
+kubectl krew list | column -t 2>&1 | sed -E 's|^(.*)|    \1|g'
 echo "-------------------------------------------------------------------------------------------"
 echo
