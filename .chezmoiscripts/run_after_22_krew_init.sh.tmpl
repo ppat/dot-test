@@ -16,12 +16,13 @@ if [[ ! -d $HOME/.krew/bin ]]; then
   log_info "Krew Plugins | Creating directories..."
   mkdir -p $HOME/.krew/bin
 fi
+log_info "Krew Plugins | Updating index..."
+kubectl krew update 2>&1 | sed -E 's/^(.*)/    \1/g'
+echo
 log_info "Krew Plugins | Detecting installed krew plugins..."
 INSTALLED_LIST=$(mktemp "krew.$(date +%Y%m%d_%H%M%S).XXXXX" -p /tmp --suffix ".list")
 trap "rm -f $INSTALLED_LIST" EXIT
 kubectl krew list > $INSTALLED_LIST
-log_info "Krew Plugins | Updating index..."
-kubectl krew update 2>&1 | sed -E 's/^(.*)/    \1/g'
 echo
 log_info "Krew Plugins | Upgrading existing plugins..."
 kubectl krew upgrade --no-update-index 2>&1 | sed -E 's/^(.*)/    \1/g'
