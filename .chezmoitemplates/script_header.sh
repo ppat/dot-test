@@ -1,16 +1,18 @@
 #!/bin/bash
 set -euo pipefail
 
+ENV_LOADER=$HOME/.local/bash/load-env.sh
+
 # Source the environment loader script
-if [ -f "$HOME/.local/bash/load_env.sh" ]; then
+if [ -f "$ENV_LOADER" ]; then
   # Save original IFS
   ORIG_IFS="$IFS"
   # Source the environment
-  source "$HOME/.local/bash/load_env.sh" >/dev/null
+  source "$ENV_LOADER" >/dev/null
   # Restore original IFS
   IFS="$ORIG_IFS"
 else
-  echo "Warning: Environment loader not found at $HOME/.local/bash/load_env.sh"
+  echo "Warning: Environment loader not found at $ENV_LOADER"
   # Set up minimal environment in case the loader doesn't exist yet
   export PATH="$HOME/.local/bin:$PATH"
 fi
