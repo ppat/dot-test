@@ -1,0 +1,11 @@
+[tools]
+# Languages
+golang    = "latest"
+node      = "latest"
+python    = "latest"
+rust      = "latest"
+terraform = "latest"
+
+# [env]
+# # Global environment variables
+# PATH = "$HOME/.local/bin:$PATH"

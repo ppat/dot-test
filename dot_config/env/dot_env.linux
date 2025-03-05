@@ -1,0 +1,24 @@
+# dot_config/env/dot_env.linux
+# Linux specific environment variables
+
+# ===== Linux Path Settings =====
+# Include snap bin if it exists
+PATH=/snap/bin:$PATH
+
+# Include flatpak bin if it exists
+PATH=$HOME/.local/share/flatpak/exports/bin:$PATH
+
+# ===== Linux Tool Settings =====
+# Use X11 display if available
+DISPLAY=:0
+
+# Set up XDG directories explicitly
+XDG_CONFIG_HOME=$HOME/.config
+XDG_CACHE_HOME=$HOME/.cache
+XDG_DATA_HOME=$HOME/.local/share
+XDG_STATE_HOME=$HOME/.local/state
+
+# ===== Desktop Environment Settings =====
+# Set default desktop applications
+BROWSER=firefox
+TERMINAL=xterm

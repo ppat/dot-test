@@ -1,0 +1,16 @@
+#!/bin/bash
+set -euo pipefail
+
+{{ if eq .chezmoi.os "darwin" -}}
+echo "Installing Homebrew packages..."
+
+# Ensure Homebrew is in PATH
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# Install packages from Brewfile
+brew bundle --file={{ .chezmoi.sourceDir }}/Brewfile
+
+echo "Homebrew packages installed successfully!"
+{{ else -}}
+echo "Skipping Homebrew packages on non-macOS system."
+{{ end -}}

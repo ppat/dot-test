@@ -1,0 +1,12 @@
+#!/bin/bash
+set -euo pipefail
+
+echo "Setting up Mise languages and tools..."
+
+# Ensure Mise is in PATH
+export PATH="$HOME/.local/bin:$PATH"
+
+# Install all tools defined in config.toml
+mise install
+
+echo "Mise setup completed successfully!"

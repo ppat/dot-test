@@ -1,0 +1,15 @@
+# Chezmoi configuration file
+{{- $name := promptString "Enter your full name for Git" -}}
+{{- $email := promptString "Enter your email for Git" -}}
+{{- $editor := or (env "EDITOR") "vim" -}}
+
+[data]
+    name = "{{ $name }}"
+    email = "{{ $email }}"
+    editor = "{{ $editor }}"
+
+[diff]
+    command = "diff"
+    
+[merge]
+    command = "vimdiff"

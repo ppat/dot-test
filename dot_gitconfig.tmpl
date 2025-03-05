@@ -1,0 +1,28 @@
+[user]
+    name = {{ .name | default "Your Name" }}
+    email = {{ .email | default "your.email@example.com" }}
+
+[core]
+    editor = {{ .editor | default "vim" }}
+    excludesfile = ~/.gitignore
+    autocrlf = input
+
+[color]
+    ui = auto
+
+[alias]
+    st = status
+    co = checkout
+    br = branch
+    ci = commit
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+    unstage = reset HEAD --
+
+[pull]
+    rebase = true
+
+[init]
+    defaultBranch = main
+
+[push]
+    default = simple

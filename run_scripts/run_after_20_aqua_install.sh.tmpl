@@ -1,0 +1,8 @@
+#!/bin/bash
+set -euo pipefail
+
+{{ template "script_header.sh" . }}
+
+log_info "Installing Aqua packages..."
+aqua install
+log_success "Aqua packages installed successfully!"

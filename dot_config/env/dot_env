@@ -1,0 +1,59 @@
+# Core environment variables for all systems
+
+# ===== Shell Preferences =====
+EDITOR=vim
+VISUAL=vim
+PAGER=less
+LANG=en_US.UTF-8
+LC_ALL=en_US.UTF-8
+TERM=xterm-256color
+
+# ===== History Settings =====
+HISTSIZE=10000
+HISTFILESIZE=20000
+HISTCONTROL=ignoreboth:erasedups
+HISTTIMEFORMAT="%F %T "
+
+# ===== Development Tools =====
+# Go settings
+GOPATH=$HOME/go
+
+# Node.js settings
+NODE_ENV=development
+
+# Python settings
+PYTHONDONTWRITEBYTECODE=1
+PIPENV_VENV_IN_PROJECT=1
+VIRTUAL_ENV_DISABLE_PROMPT=1
+
+# ===== Tool Configuration =====
+# Aqua
+AQUA_ROOT_DIR=$HOME/.local/share/aquaproj-aqua
+AQUA_POLICY_CONFIG=$HOME/.config/aquaproj-aqua/aqua-policy.yaml
+
+# Krew (kubectl plugins)
+KREW_ROOT=$HOME/.krew
+
+# Mise
+MISE_CONFIG=$HOME/.config/mise/config.toml
+MISE_GLOBAL_CONFIG=$HOME/.config/mise/config.toml
+MISE_DATA_DIR=$HOME/.local/share/mise
+MISE_CACHE_DIR=$HOME/.cache/mise
+
+# Kubernetes
+KUBECONFIG=$HOME/.kube/config
+
+# ===== Application Settings =====
+# Enable colors for ls, grep, etc.
+CLICOLOR=1
+GREP_OPTIONS=--color=auto
+LS_COLORS="di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43"
+
+# ===== Custom Aliases as Variables =====
+# These can be used in scripts that source these files
+KUBE_CMD=kubectl
+HELM_CMD=helm
+GIT_CMD=git
+
+# ===== Path Configuration =====
+PATH=$AQUA_ROOT_DIR/bin:$MISE_DATA_DIR/shims:$HOME/.local/share/mise/shims:$KREW_ROOT/bin:$GOPATH/bin:$HOME/.local/bin:$PATH

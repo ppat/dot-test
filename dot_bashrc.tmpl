@@ -1,0 +1,37 @@
+# .bashrc
+
+# If not running interactively, don't do anything
+case $- in
+    *i*) ;;
+      *) return;;
+esac
+
+# Source the environment loader script
+if [ -f "$HOME/.local/bash/load-env.sh" ]; then
+    source "$HOME/.local/bash/load-env.sh"
+fi
+
+# Initialize mise
+eval "$(mise activate bash)"
+
+# Load bash customizations
+for file in ~/.local/bash/*.bash; do
+  if [[ -r "$file" && -f "$file" && "$(basename $file)" != "load-env.sh" ]]; then 
+    source "$file"
+  fi
+done
+unset file
+
+# Initialize Starship prompt if available
+if command -v starship &> /dev/null; then
+  eval "$(starship init bash)"
+fi
+
+# {{ if eq .chezmoi.os "darwin" -}}
+# # macOS specific configuration
+# # Use Homebrew's bash-completion
+# [[ -r "/opt/homebrew/etc/profile.d/bash_completion.sh" ]] && . "/opt/homebrew/etc/profile.d/bash_completion.sh"
+# {{ end -}}
+
+# # Kubernetes aliases
+# alias k='kubectl'

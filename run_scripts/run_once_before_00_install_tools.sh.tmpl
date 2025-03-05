@@ -1,0 +1,66 @@
+#!/bin/bash
+set -euo pipefail
+
+# This script installs the core tools needed for your environment
+# It only runs once when initializing a new machine
+
+# Detect OS
+{{ if eq .chezmoi.os "darwin" -}}
+echo "Installing tools for macOS..."
+
+# Install Homebrew if not installed
+if ! command -v brew &> /dev/null; then
+  echo "Installing Homebrew..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  
+  # Add Homebrew to PATH for this session
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
+# Install Aqua if not installed
+if ! command -v aqua &> /dev/null; then
+  echo "Installing Aqua..."
+  curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.2.0/aqua-installer | bash
+  export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:$PATH"
+fi
+
+# Install Mise if not installed
+if ! command -v mise &> /dev/null; then
+  echo "Installing Mise..."
+  curl https://mise.run | sh
+  export PATH="$HOME/.local/bin:$PATH"
+fi
+
+{{ else if eq .chezmoi.os "linux" -}}
+echo "Installing tools for Linux..."
+
+# Install required packages
+if command -v apt-get &> /dev/null; then
+  # For Debian/Ubuntu
+  sudo apt-get update
+  sudo apt-get install -y curl git build-essential
+elif command -v dnf &> /dev/null; then
+  # For Fedora/RHEL
+  sudo dnf install -y curl git
+elif command -v pacman &> /dev/null; then
+  # For Arch
+  sudo pacman -Syu --noconfirm curl git base-devel
+fi
+
+# Install Aqua if not installed
+if ! command -v aqua &> /dev/null; then
+  echo "Installing Aqua..."
+  curl -sSfL https://raw.githubusercontent.com/aquaproj/aqua-installer/v2.2.0/aqua-installer | bash
+  export PATH="${AQUA_ROOT_DIR:-${XDG_DATA_HOME:-$HOME/.local/share}/aquaproj-aqua}/bin:$PATH"
+fi
+
+# Install Mise if not installed
+if ! command -v mise &> /dev/null; then
+  echo "Installing Mise..."
+  curl https://mise.run | sh
+  export PATH="$HOME/.local/bin:$PATH"
+fi
+
+{{ end -}}
+
+echo "Core tools installation complete!"

@@ -1,0 +1,12 @@
+# Kubernetes kubectl plugins to install via krew
+ctx
+ns
+neat
+access-matrix
+exec-as
+konfig
+oidc-login
+pod-logs
+tail
+tree
+restart
