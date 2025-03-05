@@ -3,70 +3,30 @@ set -euo pipefail
 # This script installs the core tools needed for your environment
 # It only runs once when initializing a new machine
 
-TEMP_DIR=$(mktemp -d)
-trap "rm -rf ${TEMP_DIR}" EXIT
-
 {{ template "script_header.sh" . }}
 
-
-install_homebrew() {
-  if ! command -v brew &> /dev/null; then
-    log_info "Installing Homebrew..."
-    /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-    log_success "Homebrew has been installed."
-  else
-    log_success "An existing Homebrew installation has been detected. Skippig install."
-  fi
-}
-
-install_linux_packages() {
-  # Install required packages
-  if command -v apt-get &> /dev/null; then
-    # For Debian/Ubuntu
-    sudo apt-get update
-    sudo apt-get install -y curl git build-essential
-  elif command -v dnf &> /dev/null; then
-    # For Fedora/RHEL
-    sudo dnf install -y curl git
-  elif command -v pacman &> /dev/null; then
-    # For Arch
-    sudo pacman -Syu --noconfirm curl git base-devel
-  fi
-}
-
-install_aqua() {
-  log_info "Installing Aqua..."
-  pushd $TEMP_DIR
-  curl -sSfL -O https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.1.1/aqua-installer
-  echo "e9d4c99577c6b2ce0b62edf61f089e9b9891af1708e88c6592907d2de66e3714  aqua-installer" | sha256sum -c -
-  chmod +x aqua-installer
-  export AQUA_VERSION=v2.44.1
-  ./aqua-installer -v $AQUA_VERSION
-  popd
-  log_success "Aqua has been installed."  
-}
-
-install_mise() {
-  log_info "Installing Mise..."
-  export MISE_VERSION=v2025.2.9
-  curl https://mise.run | sh
-  log_success "Mise has been installed."
-}
-
-# Detect OS
 {{ if eq .chezmoi.os "darwin" -}}
 echo "Installing tools for macOS..."
-echo "-------------------------------------------------------------------------------------------"
-install_homebrew
+if ! command -v brew &> /dev/null; then
+  log_info "Installing Homebrew..."
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+  log_success "Homebrew has been installed."
+else
+  log_success "An existing Homebrew installation has been detected. Skippig install."
+fi
 {{ else if eq .chezmoi.os "linux" -}}
 echo "Installing tools for Linux..."
-echo "-------------------------------------------------------------------------------------------"
-install_linux_packages
+if command -v apt-get &> /dev/null; then
+  # For Debian/Ubuntu
+  sudo apt-get update
+  sudo apt-get install -y curl git build-essential
+elif command -v dnf &> /dev/null; then
+  # For Fedora/RHEL
+  sudo dnf install -y curl git
+elif command -v pacman &> /dev/null; then
+  # For Arch
+  sudo pacman -Syu --noconfirm curl git base-devel
+fi
 {{ end -}}
-echo "-------------------------------------------------------------------------------------------"
-install_aqua
-echo "-------------------------------------------------------------------------------------------"
-install_mise
-echo "-------------------------------------------------------------------------------------------"
-
 echo "Core tools installation complete!"
+echo "-------------------------------------------------------------------------------------------"

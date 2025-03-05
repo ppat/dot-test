@@ -1,8 +1,10 @@
 #!/bin/bash
 set -euo pipefail
 
+{{ template "script_header.sh" . }}
+
 {{ if eq .chezmoi.os "darwin" -}}
-echo "Configuring macOS defaults..."
+log_info "Configuring macOS defaults..."
 
 # Show all files in Finder, including hidden ones
 defaults write com.apple.finder AppleShowAllFiles -bool true
@@ -41,7 +43,7 @@ defaults write com.apple.finder AppleShowAllFiles -bool true
 killall Finder
 killall Dock
 
-echo "macOS defaults configured successfully!"
+log_success "macOS defaults configured successfully!"
 {{ else -}}
-echo "Skipping macOS defaults on non-macOS system."
+log_info "Skipping macOS defaults on non-macOS system."
 {{ end -}}

@@ -16,6 +16,7 @@ while read -r plugin; do
   if [[ -n "$plugin" && ! "$plugin" =~ ^# ]]; then
     kubectl krew install "$plugin"
   fi
-done < {{ .chezmoi.sourceDir }}/dot_krew/krew-plugins.txt
+done < {{ .chezmoi.sourceDir }}/krew-plugins.txt
 
-echo "Krew plugins installed successfully!"
+log_success "Krew plugins installed successfully!"
+echo "-------------------------------------------------------------------------------------------"

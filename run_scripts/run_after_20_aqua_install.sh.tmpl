@@ -3,6 +3,20 @@ set -euo pipefail
 
 {{ template "script_header.sh" . }}
 
+TEMP_DIR=$(mktemp -d)
+trap "rm -rf ${TEMP_DIR}" EXIT
+
+log_info "Installing Aqua..."
+pushd $TEMP_DIR
+curl -sSfL -O https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.1.1/aqua-installer
+echo "e9d4c99577c6b2ce0b62edf61f089e9b9891af1708e88c6592907d2de66e3714  aqua-installer" | sha256sum -c -
+chmod +x aqua-installer
+export AQUA_VERSION=v2.44.1
+./aqua-installer -v $AQUA_VERSION
+popd
+log_success "Aqua has been installed."  
+echo "-------------------------------------------------------------------------------------------"
 log_info "Installing Aqua packages..."
 aqua install
 log_success "Aqua packages installed successfully!"
+echo "-------------------------------------------------------------------------------------------"

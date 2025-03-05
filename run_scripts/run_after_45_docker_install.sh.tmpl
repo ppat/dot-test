@@ -22,6 +22,7 @@ fi
 
 docker context use colima
 log_success "Docker with Colima setup complete!"
+echo "-------------------------------------------------------------------------------------------"
 
 log_info "Setting up Docker CLI plugins..."
 
@@ -36,5 +37,5 @@ log_info "Linking Docker Buildx plugin..."
 ln -sfn $(brew --prefix)/bin/docker-buildx ~/.docker/cli-plugins/docker-buildx
 
 log_success "Docker CLI plugins configured successfully!"
-
+echo "-------------------------------------------------------------------------------------------"
 {{ end -}}

@@ -3,6 +3,12 @@ set -euo pipefail
 
 {{ template "script_header.sh" . }}
 
+log_info "Installing Mise..."
+export MISE_VERSION=v2025.2.9
+curl https://mise.run | sh
+log_success "Mise has been installed."
+echo "-------------------------------------------------------------------------------------------"
 log_info "Setting up Mise languages and tools..."
 mise install
-log_info "Mise setup completed successfully!"
+log_success "Mise setup completed successfully!"
+echo "-------------------------------------------------------------------------------------------"

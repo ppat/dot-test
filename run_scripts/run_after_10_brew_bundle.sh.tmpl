@@ -5,8 +5,9 @@ set -euo pipefail
 
 {{ if eq .chezmoi.os "darwin" -}}
 log_info "Installing Homebrew packages..."
+brew update
 brew bundle --file={{ .chezmoi.sourceDir }}/Brewfile
-log_info "Homebrew packages installed successfully!"
+log_success "Homebrew packages installed successfully!"
 {{ else -}}
 log_info "Skipping Homebrew packages on non-macOS system."
 {{ end -}}

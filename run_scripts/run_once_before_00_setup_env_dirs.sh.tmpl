@@ -1,6 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
+{{ template "script_header.sh" . }}
+
 # Create environment directory structure
 log_info "Setting up environment directory structure..."
 
@@ -30,7 +32,8 @@ esac
 # Create a .env.local file if it doesn't exist
 if [ ! -f "$HOME/.config/env/.env.local" ]; then
     cp "{{ .chezmoi.sourceDir }}/dot_config/env/dot_env.local.example" "$HOME/.config/env/.env.local"
-    echo "Created .env.local from example. You may want to customize this file."
+    log_info "Created .env.local from example. You may want to customize this file."
 fi
 
 log_success "Environment directory structure set up successfully!"
+echo "-------------------------------------------------------------------------------------------"
