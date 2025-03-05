@@ -60,5 +60,39 @@ CLICOLOR=1
 GREP_OPTIONS=--color=auto
 LS_COLORS="di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43"
 
+{{ if eq .chezmoi.os "darwin" -}}
+# ===== Homebrew =====
+HOMEBREW_PREFIX=/opt/homebrew
+HOMEBREW_CELLAR=$HOMEBREW_PREFIX/Cellar
+HOMEBREW_REPOSITORY=$HOMEBREW_PREFIX
+HOMEBREW_BAT=1
+HOMEBREW_AUTOREMOVE=1
+HOMEBREW_NO_ANALYTICS=1
+HOMEBREW_NO_AUTO_UPDATE=1
+HOMEBREW_NO_ENV_HINTS=1
+PATH=$PATH:$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin
+
+# macOS specific tools
+PATH=$PATH:$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin
+MANPATH=$HOMEBREW_PREFIX/opt/coreutils/libexec/gnuman:$MANPATH
+# # Enable keychain support for ssh
+# SSH_AUTH_SOCK=$HOME/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
+# Docker/Colima configuration
+DOCKER_HOST=unix://${HOME}/.colima/default/docker.sock
+DOCKER_CONTEXT=colima
+
+{{ else if eq .chezmoi.os "linux" -}}
+# ===== Linux Tool Settings =====
+# Use X11 display if available
+DISPLAY=:0
+
+# Set up XDG directories explicitly
+XDG_CONFIG_HOME=$HOME/.config
+XDG_CACHE_HOME=$HOME/.cache
+XDG_DATA_HOME=$HOME/.local/share
+XDG_STATE_HOME=$HOME/.local/state
+
+{{ end -}}
+
 # ===== Path Configuration =====
 PATH=$AQUA_ROOT_DIR/bin:$MISE_DATA_DIR/shims:$HOME/.local/share/mise/shims:$KREW_ROOT/bin:$GOPATH/bin:$HOME/.local/bin:$PATH

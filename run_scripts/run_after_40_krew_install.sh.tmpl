@@ -2,6 +2,7 @@
 set -euo pipefail
 
 {{ template "script_header.sh" . }}
+source_env_file ~/.env
 
 log_info "Installing Kubernetes Krew plugins..."
 
