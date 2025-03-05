@@ -1,21 +1,15 @@
 # dot_gitconfig.tmpl
 [user]
     {{- if hasKey . "name" }}
-    name = {{ .name }}
-    {{- else }}
-    name = {{ promptString "Enter your Git name" }}
+    name = {{ .name | quote }}
     {{- end }}
     {{- if hasKey . "email" }}
-    email = {{ .email }}
-    {{- else }}
-    email = {{ promptString "Enter your Git email" }}
+    email = {{ .email | quote }}
     {{- end }}
 
 [core]
     {{- if hasKey . "editor" }}
-    editor = {{ .editor }}
-    {{- else if env "EDITOR" }}
-    editor = {{ env "EDITOR" }}
+    editor = {{ .editor | quote }}
     {{- else }}
     editor = vim
     {{- end }}
