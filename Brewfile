@@ -5,7 +5,7 @@ tap "homebrew/core"
 tap "homebrew/services"
 tap "homebrew/cask-fonts"
 
-# CLI Tools
+# Baseline System Packages
 brew "bash"
 brew "bash-completion"
 brew "curl"
