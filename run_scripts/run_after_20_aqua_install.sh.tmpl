@@ -17,6 +17,7 @@ popd
 log_success "Aqua has been installed."  
 echo "-------------------------------------------------------------------------------------------"
 log_info "Installing Aqua packages..."
+env | sort | grep '^AQUA'
 aqua install
 log_success "Aqua packages installed successfully!"
 echo "-------------------------------------------------------------------------------------------"
