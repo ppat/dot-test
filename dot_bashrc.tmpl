@@ -10,9 +10,14 @@ case $- in
       *) return;;
 esac
 
-# Source the environment loader script
-{{ template "script_header.sh" . }}
-source_env_file ~/.env
+set -o allexport
+if [[ -e $HOME/.env ]]; theb
+  . $HOME/.env  
+fi
+if [[ -e $HOME/.env.overrides ]]; theb
+  . $HOME/.env.overrides
+fi
+set +o allexport
 
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
@@ -41,11 +46,13 @@ if command -v starship &> /dev/null; then
 fi
 
 # add injected coder CLI to the PATH
-CODER_CLI_LOCATION=$(dirname $(find /tmp/coder* -name coder -type f -executable))
-if [[ ! -z "${CODER_CLI_LOCATION}" ]]; then
-  export PATH="${PATH}:${CODER_CLI_LOCATION}"
+if pgrep -f "coder agent" &> /dev/null; then
+  CODER_CLI_LOCATION=$(dirname $(find /tmp/coder* -name coder -type f -executable))
+  if [[ ! -z "${CODER_CLI_LOCATION}" ]]; then
+    export PATH="${PATH}:${CODER_CLI_LOCATION}"
+  fi
+  unset CODER_CLI_LOCATION
 fi
-unset CODER_CLI_LOCATION
 
 # source additional bash rc configuration
 RC_FILES="$(find ${HOME}/.local/bash -type f)"

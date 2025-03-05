@@ -78,8 +78,8 @@ MANPATH=$HOMEBREW_PREFIX/opt/coreutils/libexec/gnuman
 # # Enable keychain support for ssh
 # SSH_AUTH_SOCK=$HOME/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
 # Docker/Colima configuration
-DOCKER_HOST=unix://${HOME}/.colima/default/docker.sock
-DOCKER_CONTEXT=colima
+# DOCKER_HOST=unix://${HOME}/.colima/default/docker.sock
+# DOCKER_CONTEXT=colima
 
 {{ else if eq .chezmoi.os "linux" -}}
 # ===== Linux Tool Settings =====
