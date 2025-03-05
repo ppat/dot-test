@@ -7,7 +7,7 @@ HOMEBREW_CELLAR=$HOMEBREW_PREFIX/Cellar
 HOMEBREW_REPOSITORY=$HOMEBREW_PREFIX
 
 # Add Homebrew to PATH
-PATH=$PATH:/opt/homebrew/bin:/opt/homebrew/sbin
+PATH=$PATH:$HOMEBREW_PREFIX/bin:$HOMEBREW_PREFIX/sbin
 
 # Homebrew settings
 HOMEBREW_NO_ANALYTICS=1
