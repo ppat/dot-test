@@ -6,32 +6,32 @@ tap "homebrew/services"
 tap "homebrew/cask-fonts"
 
 # CLI Tools
-brew "bash"              # Latest version of Bash
-brew "git"               # Latest version of Git
-brew "starship"          # Cross-shell prompt
-brew "bat"               # Cat clone with syntax highlighting
-brew "exa"               # Modern replacement for ls
-brew "fd"                # Simple, fast alternative to find
-brew "fzf"               # Fuzzy finder
-brew "jq"                # Command-line JSON processor
-brew "ripgrep"           # Fast grep alternative
-brew "tmux"              # Terminal multiplexer
-brew "htop"              # Interactive process viewer
-brew "vim"               # Improved vi editor
-brew "tree"              # Display directories as trees
-brew "wget"              # Internet file retriever
+brew "bash"
+brew "bash-completion"
+brew "curl"
+brew "git"
+brew "starship"
+brew "jq"
+brew "htop"
+brew "vim"
+brew "tree"
+brew "wget"
 
-# Development Tools
-brew "docker"            # Containerization platform
+# Virtualization / Containerization tools
+brew "colima"
+brew "docker"
+brew "docker-buildx"
+brew "docker-completion"
+brew "docker-compose"
 
 # GUI Applications
-cask "visual-studio-code"    # Code editor
-cask "iterm2"                # Better terminal
-cask "google-chrome"         # Web browser
-cask "firefox"               # Web browser
-cask "slack"                 # Messaging app
-cask "zoom"                  # Video conferencing
-cask "rectangle"             # Window manager
+cask "visual-studio-code"
+cask "iterm2"
+cask "google-chrome"
+cask "firefox"
+cask "slack"
+cask "zoom"
+cask "rectangle"
 
 # Fonts
 cask "font-fira-code"        # Monospaced font with programming ligatures

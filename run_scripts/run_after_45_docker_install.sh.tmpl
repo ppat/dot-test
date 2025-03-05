@@ -1,0 +1,40 @@
+#!/bin/bash
+{{ template "script_header.sh" . }}
+
+# Only on macOS
+{{ if eq .chezmoi.os "darwin" -}}
+
+log_info "Setting up Colima for Docker..."
+
+# Check if Colima is running
+if ! colima status &>/dev/null; then
+  log_info "Starting Colima with default settings..."
+  colima start --cpu 2 --memory 4 --disk 60
+else
+  log_info "Colima is already running"
+fi
+
+# Configure Docker context to use Colima
+if ! docker context inspect colima &>/dev/null; then
+  log_info "Setting up Docker context for Colima..."
+  docker context create colima --docker "host=unix://${HOME}/.colima/default/docker.sock"
+fi
+
+docker context use colima
+log_success "Docker with Colima setup complete!"
+
+log_info "Setting up Docker CLI plugins..."
+
+# Create the Docker CLI plugins directory if it doesn't exist
+mkdir -p ~/.docker/cli-plugins
+
+# Create symlinks for Docker plugins
+log_info "Linking Docker Compose plugin..."
+ln -sfn $(brew --prefix)/bin/docker-compose ~/.docker/cli-plugins/docker-compose
+
+log_info "Linking Docker Buildx plugin..."
+ln -sfn $(brew --prefix)/bin/docker-buildx ~/.docker/cli-plugins/docker-buildx
+
+log_success "Docker CLI plugins configured successfully!"
+
+{{ end -}}

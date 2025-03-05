@@ -1,12 +1,8 @@
 #!/bin/bash
 set -euo pipefail
 
-echo "Setting up Mise languages and tools..."
+{{ template "script_header.sh" . }}
 
-# Ensure Mise is in PATH
-export PATH="$HOME/.local/bin:$PATH"
-
-# Install all tools defined in config.toml
+log_info "Setting up Mise languages and tools..."
 mise install
-
-echo "Mise setup completed successfully!"
+log_info "Mise setup completed successfully!"

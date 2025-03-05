@@ -1,23 +1,14 @@
 #!/bin/bash
 set -euo pipefail
 
-echo "Installing Kubernetes Krew plugins..."
+{{ template "script_header.sh" . }}
+
+log_info "Installing Kubernetes Krew plugins..."
 
 # Ensure krew is installed first
 if ! command -v kubectl krew &> /dev/null; then
-  echo "Installing Krew..."
-  (
-    set -x; cd "$(mktemp -d)" &&
-    OS="$(uname | tr '[:upper:]' '[:lower:]')" &&
-    ARCH="$(uname -m | sed -e 's/x86_64/amd64/' -e 's/\(arm\)\(64\)\?.*/\1\2/' -e 's/aarch64$/arm64/')" &&
-    KREW="krew-${OS}_${ARCH}" &&
-    curl -fsSLO "https://github.com/kubernetes-sigs/krew/releases/latest/download/${KREW}.tar.gz" &&
-    tar zxvf "${KREW}.tar.gz" &&
-    ./"${KREW}" install krew
-  )
-  
-  # Add krew to PATH for this session
-  export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+  log_warning "Krew is not present. Ensure it is installed first before installing plugins!"
+  return
 fi
 
 # Install plugins from the list
