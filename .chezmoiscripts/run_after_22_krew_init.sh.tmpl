@@ -11,7 +11,11 @@ fi
 if ! command -v kubectl-krew > /dev/null; then
   log_error "Krew Plugins | Krew binary is not in path, cannot proceed!"
   exit 1
-fi  
+fi
+if [[ ! -d $HOME/.krew/bin ]]; then
+  log_info "Krew Plugins | Creating directories..."
+  mkdir -p $HOME/.krew/bin
+fi
 log_info "Krew Plugins | Detecting installed krew plugins..."
 INSTALLED_LIST=$(mktemp "krew.$(date +%Y%m%d_%H%M%S).XXXXX" -p /tmp --suffix ".list")
 trap "rm -f $INSTALLED_LIST" EXIT
