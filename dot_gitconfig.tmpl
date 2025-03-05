@@ -1,9 +1,24 @@
+# dot_gitconfig.tmpl
 [user]
-    name = {{ .name | default "Your Name" }}
-    email = {{ .email | default "your.email@example.com" }}
+    {{- if hasKey . "name" }}
+    name = {{ .name }}
+    {{- else }}
+    name = {{ promptString "Enter your Git name" }}
+    {{- end }}
+    {{- if hasKey . "email" }}
+    email = {{ .email }}
+    {{- else }}
+    email = {{ promptString "Enter your Git email" }}
+    {{- end }}
 
 [core]
-    editor = {{ .editor | default "vim" }}
+    {{- if hasKey . "editor" }}
+    editor = {{ .editor }}
+    {{- else if env "EDITOR" }}
+    editor = {{ env "EDITOR" }}
+    {{- else }}
+    editor = vim
+    {{- end }}
     excludesfile = ~/.gitignore
     autocrlf = input
 
