@@ -1,0 +1,27 @@
+#!/bin/bash
+set -euo pipefail
+
+{{ template "script_header.sh" . }}
+
+log_info "CLI Tools | Initializing Aqua..."
+if ! command -v aqua > /dev/null; then
+  log_error "CLI Tools | Aqua binary is not in path, cannot proceed!"
+  exit 1
+fi
+if [[ ! -e "$AQUA_GLOBAL_CONFIG" ]]; then
+  log_error "CLI Tools | Global aqua configuration does not exist, cannot proceed!"
+  exit 1
+fi
+if [[ -e "$AQUA_POLICY_CONFIG" ]]; then
+  log_info "CLI Tools | Allowing aqua policy file: $AQUA_POLICY_CONFIG..."
+  aqua policy allow $AQUA_POLICY_CONFIG
+fi
+log_info "CLI Tools | Installing or upgrading aqua packages..."
+aqua install --all 2>&1 | sed -E 's|^(.*)|    \1|g'
+log_success "CLI Tools | Aqua install is complete."
+echo
+echo "Available packages..."
+log_success "CLI Tools | Display installed packages..."
+aqua list --installed --all | column -t 2>&1 | sed -E 's|^(.*)|    \1|g'
+echo "-------------------------------------------------------------------------------------------"
+echo

@@ -5,6 +5,7 @@ tap "homebrew/services"
 # Baseline System Packages
 brew "bash"
 brew "bash-completion"
+brew "ca-certificates"
 brew "coreutils"
 brew "curl"
 brew "git"
@@ -22,22 +23,6 @@ brew "wget"
 # Package Managers
 brew "aqua"
 brew "mise"
-
-# Virtualization / Containerization tools
-brew "colima"
-brew "docker"
-brew "docker-buildx"
-brew "docker-completion"
-brew "docker-compose"
-
-# GUI Applications
-cask "visual-studio-code"
-cask "iterm2"
-cask "google-chrome"
-cask "firefox"
-cask "slack"
-cask "zoom"
-cask "rectangle"
 
 # Fonts
 cask "font-fira-code"        # Monospaced font with programming ligatures
