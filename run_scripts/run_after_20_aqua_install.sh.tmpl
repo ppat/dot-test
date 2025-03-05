@@ -4,21 +4,26 @@ set -euo pipefail
 {{ template "script_header.sh" . }}
 source_env_file ~/.env
 
-TEMP_DIR=$(mktemp -d)
-trap "rm -rf ${TEMP_DIR}" EXIT
+init_aqua() {
+  echo "Initializing aqua..."
+  if ! command -v aqua > /dev/null; then
+    echo "Aqua binary is not in path, cannot proceed!"
+    exit 1
+  fi
+  if [[ ! -e "$AQUA_GLOBAL_CONFIG" ]]; then
+    echo "Global aqua configuration does not exist, cannot proceed!"
+    exit 1
+  fi
+  if [[ -e "$AQUA_POLICY_CONFIG" ]]; then
+    echo "Allowing aqua policy file: $AQUA_POLICY_CONFIG..."
+    aqua policy allow $AQUA_POLICY_CONFIG
+  fi
+  echo "Installing or updating packages with global aqua configuration..."
+  aqua install --all 2>&1 | sed -E 's|^(.*)|    \1|g'
+  echo "Available packages..."
+  aqua list --installed --all | column -t 2>&1 | sed -E 's|^(.*)|    \1|g'
+  echo "Done!"
+}
 
-log_info "Installing Aqua..."
-pushd $TEMP_DIR
-curl -sSfL -O https://raw.githubusercontent.com/aquaproj/aqua-installer/v3.1.1/aqua-installer
-echo "e9d4c99577c6b2ce0b62edf61f089e9b9891af1708e88c6592907d2de66e3714  aqua-installer" | sha256sum -c -
-chmod +x aqua-installer
-export AQUA_VERSION=v2.44.1
-./aqua-installer -v $AQUA_VERSION
-popd
-log_success "Aqua has been installed."  
-echo "-------------------------------------------------------------------------------------------"
-log_info "Installing Aqua packages..."
-env | sort | grep '^AQUA'
-aqua install
-log_success "Aqua packages installed successfully!"
+init_aqua
 echo "-------------------------------------------------------------------------------------------"

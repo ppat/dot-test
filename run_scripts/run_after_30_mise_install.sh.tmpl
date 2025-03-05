@@ -4,12 +4,16 @@ set -euo pipefail
 {{ template "script_header.sh" . }}
 source_env_file ~/.env
 
-log_info "Installing Mise..."
-export MISE_VERSION=v2025.2.9
-curl https://mise.run | sh
-log_success "Mise has been installed."
-echo "-------------------------------------------------------------------------------------------"
-log_info "Setting up Mise languages and tools..."
-mise install
+init_mise() {
+  echo "Setting up the environment with mise..."
+  eval "$(mise activate bash)"
+  echo "Upgrading all mise tools..."
+  mise upgrade --yes 2>&1 | sed -E 's|^(.*)|    \1|g'
+  echo "Display installed mise tools..."
+  mise ls 2>&1 | sed -E 's|^(.*)|    \1|g'
+  echo "Done!"
+}
+
+init_mise
 log_success "Mise setup completed successfully!"
 echo "-------------------------------------------------------------------------------------------"

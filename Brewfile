@@ -19,6 +19,10 @@ brew "tree"
 brew "vim"
 brew "wget"
 
+# Package Managers
+brew "aqua"
+brew "mise"
+
 # Virtualization / Containerization tools
 brew "colima"
 brew "docker"

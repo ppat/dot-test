@@ -1,26 +1,9 @@
 # .profile
 
-# Source the environment loader script
-if [ -f "$HOME/.local/bash/load-env.sh" ]; then
-    source "$HOME/.local/bash/load-env.sh"
+# if running bash
+if [ -n "$BASH_VERSION" ]; then
+  # include .bashrc if it exists
+  if [ -f "$HOME/.bashrc" ]; then
+	source "$HOME/.bashrc"
+  fi
 fi
-
-# Include .bashrc if it exists and if running bash
-if [ -n "$BASH_VERSION" ] && [ -f "$HOME/.bashrc" ]; then
-    . "$HOME/.bashrc"
-fi
-
-# # Set KUBECONFIG to include all configs in .kube/conf.d
-# if [ -d "$HOME/.kube/conf.d" ]; then
-#     KUBECONFIG=""
-#     for conf in "$HOME/.kube/conf.d"/*; do
-#         if [ -f "$conf" ]; then
-#             if [ -z "$KUBECONFIG" ]; then
-#                 KUBECONFIG="$conf"
-#             else
-#                 KUBECONFIG="$KUBECONFIG:$conf"
-#             fi
-#         fi
-#     done
-#     export KUBECONFIG
-# fi
