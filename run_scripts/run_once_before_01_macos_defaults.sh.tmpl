@@ -2,7 +2,6 @@
 set -euo pipefail
 
 {{ template "script_header.sh" . }}
-source_env_file ~/.env
 
 {{ if eq .chezmoi.os "darwin" -}}
 log_info "Configuring macOS defaults..."

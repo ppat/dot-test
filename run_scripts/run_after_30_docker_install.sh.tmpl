@@ -1,6 +1,5 @@
 #!/bin/bash
 {{ template "script_header.sh" . }}
-source_env_file ~/.env
 
 # Only on macOS
 {{ if eq .chezmoi.os "darwin" -}}

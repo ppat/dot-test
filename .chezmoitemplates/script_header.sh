@@ -17,12 +17,11 @@ log_error() {
   echo -e "\033[0;31m[ERROR]\033[0m $1"
 }
 
-source_env_file() {
-  local env_file="$1"
-  if [[ ! -e "$env_file" ]]; then
-    return
-  fi
-  set -o allexport
-  source $env_file
-  set +o allexport
-}
+set -o allexport
+if [[ -e $HOME/.env ]]; then
+  . $HOME/.env  
+fi
+if [[ -e $HOME/.env.overrides ]]; then
+  . $HOME/.env.overrides
+fi
+set +o allexport

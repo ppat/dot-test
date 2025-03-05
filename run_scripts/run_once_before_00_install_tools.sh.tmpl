@@ -4,7 +4,6 @@ set -euo pipefail
 # It only runs once when initializing a new machine
 
 {{ template "script_header.sh" . }}
-source_env_file ~/.env
 
 {{ if eq .chezmoi.os "darwin" -}}
 echo "Installing tools for macOS..."
