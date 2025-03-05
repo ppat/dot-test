@@ -1,0 +1,86 @@
+---
+packages:
+- type: github_release
+  repo_owner: qarmin
+  repo_name: czkawka
+  description: Multi functional app to find duplicates, empty folders, similar images etc
+  version_constraint: 'semver(">= 2.4.0")'
+  asset: czkawka_cli
+  format: raw
+  overrides:
+  - goos: linux
+    asset: linux_czkawka_cli
+  - goos: darwin
+    asset: mac_czkawka_cli
+  - goos: windows
+    asset: windows_czkawka_cli.exe
+  search_words:
+  - czkawka
+  - czkawka-cli
+  supported_envs:
+  - darwin
+  - linux
+  - windows
+- type: go_build
+  repo_owner: minio
+  repo_name: mc
+  description: MinIO Client provides a modern alternative to UNIX commands like ls, cat, cp, mirror, diff, find etc.
+  files:
+  - name: mc
+    src: ./
+    dir: mc-{{.Version}}
+  supported_envs:
+  - darwin
+  - linux
+  - windows
+- type: github_release
+  repo_owner: bitwarden
+  repo_name: sdk-sm
+  description: Bitwarden Secrets Manager CLI.
+  version_constraint: 'semverWithVersion(">= 1.0.0", trimPrefix(Version, "bws-"))'
+  asset: bws
+  files:
+  - name: bws
+    src: ./bws
+  format: zip
+  overrides:
+  - goos: darwin
+    goarch: amd64
+    asset: bws-x86_64-apple-darwin-{{trimPrefix "bws-v" .Version}}
+  - goos: darwin
+    goarch: arm64
+    asset: bws-aarch64-apple-darwin-{{trimPrefix "bws-v" .Version}}
+  - goos: linux
+    goarch: amd64
+    asset: bws-x86_64-unknown-linux-gnu-{{trimPrefix "bws-v" .Version}}
+  - goos: linux
+    goarch: arm64
+    asset: bws-aarch64-unknown-linux-gnu-{{trimPrefix "bws-v" .Version}}
+  - goos: windows
+    goarch: amd64
+    asset: bws-x86_64-pc-windows-msvc-{{trimPrefix "bws-v" .Version}}
+  - goos: windows
+    goarch: arm64
+    asset:  bws-aarch64-pc-windows-msvc-{{trimPrefix "bws-v" .Version}}
+  search_words:
+  - bws
+  - bitwarden-secrets-manager
+  - bitwarden-secrets-manager-cli
+  supported_envs:
+  - darwin
+  - linux
+  - windows
+- type: github_release
+  repo_owner: kyverno
+  repo_name: chainsaw
+  description: Chainsaw provides a declarative approach to test Kubernetes operators and controllers.
+  version_constraint: 'semverWithVersion(">= 0.2.0", trimPrefix(Version, "v"))'
+  asset: chainsaw_{{.OS}}_{{.Arch}}.tar.gz
+  format: tar.gz
+  search_words:
+  - chainsaw
+  - kyverno-chainsaw
+  supported_envs:
+  - darwin
+  - linux
+  - windows

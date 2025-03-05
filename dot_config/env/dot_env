@@ -20,16 +20,24 @@ GOPATH=$HOME/go
 
 # Node.js settings
 NODE_ENV=development
+NODE_NO_WARNINGS=1
+NPM_CONFIG_AUDIT=false
+NPM_CONFIG_FUND=false
+NPM_CONFIG_LOGLEVEL=error
 
 # Python settings
-PYTHONDONTWRITEBYTECODE=1
-PIPENV_VENV_IN_PROJECT=1
-VIRTUAL_ENV_DISABLE_PROMPT=1
+# PYTHONDONTWRITEBYTECODE=1
+# PIPENV_VENV_IN_PROJECT=1
+# VIRTUAL_ENV_DISABLE_PROMPT=1
 
 # ===== Tool Configuration =====
 # Aqua
-AQUA_ROOT_DIR=$HOME/.local/share/aquaproj-aqua
+AQUA_GLOBAL_CONFIG=$HOME/.config/aquaproj-aqua/aqua.yaml
+AQUA_LOG_COLOR=always
+AQUA_LOG_LEVEL=warn
 AQUA_POLICY_CONFIG=$HOME/.config/aquaproj-aqua/aqua-policy.yaml
+AQUA_PROGRESS_BAR=true
+AQUA_ROOT_DIR=$HOME/.local/share/aquaproj-aqua
 
 # Krew (kubectl plugins)
 KREW_ROOT=$HOME/.krew
@@ -39,6 +47,9 @@ MISE_CONFIG=$HOME/.config/mise/config.toml
 MISE_GLOBAL_CONFIG=$HOME/.config/mise/config.toml
 MISE_DATA_DIR=$HOME/.local/share/mise
 MISE_CACHE_DIR=$HOME/.cache/mise
+MISE_LOG_LEVEL=warn
+MISE_LOG_FILE=$HOME/.log/mise.log
+MISE_LOG_FILE_LEVEL=debug
 
 # Kubernetes
 KUBECONFIG=$HOME/.kube/config
@@ -48,12 +59,6 @@ KUBECONFIG=$HOME/.kube/config
 CLICOLOR=1
 GREP_OPTIONS=--color=auto
 LS_COLORS="di=34:ln=35:so=32:pi=33:ex=31:bd=34;46:cd=34;43:su=30;41:sg=30;46:tw=30;42:ow=30;43"
-
-# ===== Custom Aliases as Variables =====
-# These can be used in scripts that source these files
-KUBE_CMD=kubectl
-HELM_CMD=helm
-GIT_CMD=git
 
 # ===== Path Configuration =====
 PATH=$AQUA_ROOT_DIR/bin:$MISE_DATA_DIR/shims:$HOME/.local/share/mise/shims:$KREW_ROOT/bin:$GOPATH/bin:$HOME/.local/bin:$PATH
