@@ -7,7 +7,7 @@ set -euo pipefail
 mise_first_time_setup() {
   mkdir -p $HOME/.config/mise
   log_info "Language SDKs & Tools | Using first time mise config..."
-  cp {{ .chezmoi.sourceDir }}/mise.toml $HOME/.config/mise/config.toml
+  cp {{ .chezmoi.sourceDir }}/mise-first.toml $HOME/.config/mise/config.toml
   mise_install
   log_info "Language SDKs & Tools | Removing first time mise config..."
   rm $HOME/.config/mise/config.toml
