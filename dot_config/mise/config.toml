@@ -15,14 +15,14 @@ shellcheck = "0.10.0"
 terraform  = "1.6.6"
 yamllint   = "1.37.1"
 
-"npm:@bitwarden/cli"    = "2025.1.3"
-"npm:markdownlint-cli2" = "0.17.2"
-"npm:release-please"    = "16.18.0"
-"npm:renovate"          = "39.191.4"
-"pipx:ansible-core"     = { version = "2.18.3", pipx_args = "--preinstall jmespath==1.0.1 --preinstall kubernetes==31.0.0" }
-"pipx:cookiecutter"     = "2.6.0"
-"pipx:flux-local"       = "7.2.1"
-"pipx:poetry"           = "2.1.1"
+# "npm:@bitwarden/cli"    = "2025.1.3"
+# "npm:markdownlint-cli2" = "0.17.2"
+# "npm:release-please"    = "16.18.0"
+# "npm:renovate"          = "39.191.4"
+# "pipx:ansible-core"     = { version = "2.18.3", pipx_args = "--preinstall jmespath==1.0.1 --preinstall kubernetes==31.0.0" }
+# "pipx:cookiecutter"     = "2.6.0"
+# "pipx:flux-local"       = "7.2.1"
+# "pipx:poetry"           = "2.1.1"
 
 [settings]
 env                    = [".env"]
