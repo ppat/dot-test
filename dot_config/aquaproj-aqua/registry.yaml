@@ -21,18 +21,6 @@ packages:
   - darwin
   - linux
   - windows
-- type: go_build
-  repo_owner: minio
-  repo_name: mc
-  description: MinIO Client provides a modern alternative to UNIX commands like ls, cat, cp, mirror, diff, find etc.
-  files:
-  - name: mc
-    src: ./
-    dir: mc-{{.Version}}
-  supported_envs:
-  - darwin
-  - linux
-  - windows
 - type: github_release
   repo_owner: bitwarden
   repo_name: sdk-sm

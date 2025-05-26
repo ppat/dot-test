@@ -50,8 +50,7 @@ packages:
 - name: kyverno/chainsaw@v0.2.12
   registry: local
 - name: mikefarah/yq@v4.45.4
-- name: minio/mc@RELEASE.2024-11-21T17-21-54Z
-  registry: local
+- name: minio/mc@RELEASE.2025-05-21T01-59-54Z
 - name: muesli/duf@v0.8.1
 - name: nektos/act@v0.2.77
 - name: qarmin/czkawka@9.0.0
