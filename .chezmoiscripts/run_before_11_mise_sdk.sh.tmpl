@@ -11,7 +11,7 @@ mise_first_time_setup() {
   mise_install
   log_info "Language SDKs & Tools | Removing first time mise config..."
   rm $HOME/.config/mise/config.toml
-  log_info "Language SDKs & Tools | First time mise setup complete!"
+  log_success "Language SDKs & Tools | First time mise setup complete!"
 }
 
 if [[ -f $HOME/.config/mise/config.toml && -d $HOME/.cache/mise && -d $HOME/.local/share/mise && -d $HOME/.local/state/mise ]]; then 
