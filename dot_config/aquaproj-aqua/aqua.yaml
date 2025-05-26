@@ -20,6 +20,7 @@ packages:
 - name: aquasecurity/kube-bench@v0.10.6
 - name: aquasecurity/trivy@v0.62.1
 - name: atuinsh/atuin@v18.6.1
+- name: bitwarden/clients@cli-v2025.4.0
 - name: bitwarden/sdk-sm@bws-v1.0.0
   registry: local
 - name: bootandy/dust@v1.2.0
