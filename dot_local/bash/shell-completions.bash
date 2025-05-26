@@ -32,9 +32,9 @@ if command -v helm > /dev/null; then
 fi
 
 # kustomize
-if command -v kustomize > /dev/null; then
-  source <(kustomize completion bash)
-fi
+# if command -v kustomize > /dev/null; then
+#   source <(kustomize completion bash)
+# fi
 
 # terraform
 # if [[ -d "$TFENV_CONFIG_DIR/versions/" ]]; then
@@ -45,9 +45,9 @@ fi
 # fi
 
 # yq
-if command -v yq > /dev/null; then
-  source <(yq shell-completion bash)
-fi
+# if command -v yq > /dev/null; then
+#   source <(yq shell-completion bash)
+# fi
 
 # # poetry
 # if command -v poetry > /dev/null; then
@@ -70,14 +70,9 @@ if command -v gh > /dev/null; then
 fi
 
 # kind
-if command -v kind > /dev/null; then
-  source <(kind completion bash)
-fi
-
-# mc
-if [[ command -v mc ]]; then
-  complete -C $(command -v mc) mc
-fi
+# if command -v kind > /dev/null; then
+#   source <(kind completion bash)
+# fi
 
 # zoxide
 # if command -v zoxide > /dev/null; then
