@@ -1,11 +1,6 @@
 {
   "checksums": [
     {
-      "id": "github_archive/github.com/minio/mc/RELEASE.2024-11-21T17-21-54Z",
-      "checksum": "DBFB5EFF8A9D1A8B3B02C30596377D44478040CD19563314656F4CD009DE8922",
-      "algorithm": "sha256"
-    },
-    {
       "id": "github_release/github.com/BurntSushi/ripgrep/14.1.1/ripgrep-14.1.1-aarch64-apple-darwin.tar.gz",
       "checksum": "24AD76777745FBFF131C8FBC466742B011F925BFA4FFFA2DED6DEF23B5B937BE",
       "algorithm": "sha256"
@@ -712,8 +707,8 @@
     },
     {
       "id": "registries/github_content/github.com/aquaproj/aqua-registry/v4.317.0/registry.yaml",
-      "checksum": "C7A942D641FA1E623905CA8F455EAF29F28B6307D3BA5A3D99EB4583D6BA644B84357B39115C2AAE0CB4F1DAB9DFEAC1629F63296C3DF3E03569D71CEC0100CF",
-      "algorithm": "sha512"
+      "checksum": "08252D12C8144FCFC5577811CEAB709EBFD05A21F323816DECC22E9AF888EE92",
+      "algorithm": "sha256"
     }
   ]
 }
