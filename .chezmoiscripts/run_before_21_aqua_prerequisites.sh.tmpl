@@ -5,10 +5,13 @@ set -euo pipefail
 {{ template "aqua_install.sh" . }}
 
 aqua_first_time_setup() {
+  log_info "CLI Tools | Using first time aqua config..."
   cp {{ .chezmoi.sourceDir }}/aqua-first.yaml /tmp/aqua.yaml
   cd /tmp
   aqua_install
+  log_info "CLI Tools | Removing first time aqua config..."
   rm /tmp/aqua.yaml
+  log_success "CLI Tools | First time aqua setup complete!"
 }
 
 if [[ -f $HOME/.config/aquaproj-aqua/aqua.yaml && -d $HOME/.local/share/aquaproj-aqua ]]; then 
