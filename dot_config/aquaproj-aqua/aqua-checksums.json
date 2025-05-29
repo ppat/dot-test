@@ -71,6 +71,16 @@
       "algorithm": "sha256"
     },
     {
+      "id": "github_release/github.com/aquasecurity/kube-bench/v0.10.6/kube-bench_0.10.6_darwin_amd64.tar.gz",
+      "checksum": "1813B04C053720DE902AA2B31DE9EB74A978E187A738A0FAA5CD20988C5480C5",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/aquasecurity/kube-bench/v0.10.6/kube-bench_0.10.6_darwin_arm64.tar.gz",
+      "checksum": "5ED6267BEC4007727C5639E3CD6E64773F2DEF7D972C12DD8F78C2AD530BDE24",
+      "algorithm": "sha256"
+    },
+    {
       "id": "github_release/github.com/aquasecurity/kube-bench/v0.10.6/kube-bench_0.10.6_linux_amd64.tar.gz",
       "checksum": "49B339C6E0E553B6A927B4F0ECAD6A340BC326513FEF33229434E5F55B2E4482",
       "algorithm": "sha256"
@@ -291,6 +301,11 @@
       "algorithm": "sha256"
     },
     {
+      "id": "github_release/github.com/getsops/sops/v3.10.2/sops-v3.10.2.darwin.arm64",
+      "checksum": "99702DF79737162B986641AFB8D98251ACB16A52E6CAB556A6B6F57C608C059A",
+      "algorithm": "sha256"
+    },
+    {
       "id": "github_release/github.com/getsops/sops/v3.10.2/sops-v3.10.2.linux.amd64",
       "checksum": "79B0F844237BD4B0446E4DC884DBC1765FC7DEDC3968F743D5949C6F2E701739",
       "algorithm": "sha256"
@@ -298,6 +313,46 @@
     {
       "id": "github_release/github.com/getsops/sops/v3.10.2/sops-v3.10.2.linux.arm64",
       "checksum": "E91DDC04E6A78F5AED9E4FC347A279B539C43B74D99E6B8078E2F2F6F5B309F5",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/grafana/loki/v3.3.2/logcli-darwin-amd64.zip",
+      "checksum": "0448340622930608AAB1F38F60D49CDB42B506BB91CC1BA6D4218CE7DB62FF69",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/grafana/loki/v3.3.2/logcli-darwin-arm64.zip",
+      "checksum": "F9DC1ABB7F01766D49179AA18FE542EE8E802F9B230305EF0CDB681ED96D6624",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/grafana/loki/v3.3.2/logcli-linux-amd64.zip",
+      "checksum": "E01F9AAAAB9BDD1EA3211850C6D4219BA33CDADB013B518DBCF387DFFBEFEE23",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/grafana/loki/v3.3.2/logcli-linux-arm64.zip",
+      "checksum": "ED703DFBFBB85335B05BCA0BBF770A635FBC528AC4612BAAFC5271DD68E487CB",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/grafana/mimir/mimir-2.14.2/mimirtool-darwin-amd64",
+      "checksum": "B17DA98F3615B174527019A11CC95B6E6CC2A4FE506BA89D3612A4EB1963C051",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/grafana/mimir/mimir-2.14.2/mimirtool-darwin-arm64",
+      "checksum": "ED0060917D47062DFCA33E9D9E9E586B6F0A33D215CAEDC5D7666DC22C668C8A",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/grafana/mimir/mimir-2.14.2/mimirtool-linux-amd64",
+      "checksum": "2BA4CC413B64D7175B3DE5E079F57226D6285B1A6C8D9ACB6DD835D1A85FE3F5",
+      "algorithm": "sha256"
+    },
+    {
+      "id": "github_release/github.com/grafana/mimir/mimir-2.14.2/mimirtool-linux-arm64",
+      "checksum": "7F1145DC8E1BD29AEF18F7A73AFE90A99034225C0090205EA9F1FB342E1830C4",
       "algorithm": "sha256"
     },
     {
@@ -516,16 +571,6 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/qarmin/czkawka/9.0.0/linux_czkawka_cli",
-      "checksum": "850CABBD47E3CF2FE33F7FA953B51F43CE90226954ADCE76AED5DDCB38E56D62",
-      "algorithm": "sha256"
-    },
-    {
-      "id": "github_release/github.com/qarmin/czkawka/9.0.0/mac_czkawka_cli",
-      "checksum": "FD4D1FED905C4959A19BEBA24C1ACFAF17D48618C056CED78B134104FBC519D1",
-      "algorithm": "sha256"
-    },
-    {
       "id": "github_release/github.com/rhysd/actionlint/v1.7.7/actionlint_1.7.7_darwin_amd64.tar.gz",
       "checksum": "28E5DE5A05FC558474F638323D736D822FFF183D2D492F0AECB2B73CC44584F5",
       "algorithm": "sha256"
@@ -701,8 +746,8 @@
       "algorithm": "sha256"
     },
     {
-      "id": "registries/github_content/github.com/aquaproj/aqua-registry/v4.317.0/registry.yaml",
-      "checksum": "08252D12C8144FCFC5577811CEAB709EBFD05A21F323816DECC22E9AF888EE92",
+      "id": "registries/github_content/github.com/aquaproj/aqua-registry/v4.373.0/registry.yaml",
+      "checksum": "FDF48415E2BF395B7BCA932B27D29CCD53722E798A434318FADF097FF788A381",
       "algorithm": "sha256"
     }
   ]

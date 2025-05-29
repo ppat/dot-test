@@ -3,6 +3,7 @@
 # Define variables in global scope
 {{- $gitName := promptStringOnce . "name" "Enter your full name for Git" -}}
 {{- $gitEmail := promptStringOnce . "email" "Enter your email for Git" -}}
+{{- $accessToken := promptStringOnce . "bwsAccessToken" "Enter your BWS Access Token" -}}
 {{- $editor := or (env "EDITOR") "vim" -}}
 
 # Set values in the data section
@@ -10,6 +11,7 @@
     name = {{ $gitName | quote }}
     email = {{ $gitEmail | quote }}
     editor = {{ $editor | quote }}
+    bwsAccessToken = {{ $accessToken | quote }}
 
 [diff]
     command = "diff"

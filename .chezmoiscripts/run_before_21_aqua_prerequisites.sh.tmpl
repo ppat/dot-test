@@ -5,6 +5,6 @@ set -euo pipefail
 {{ template "aqua_install.sh" . }}
 
 log_info "CLI Tools | Performing aqua standard setup..."
-aqua_install standard
+aqua_install prerequisites
 echo "-------------------------------------------------------------------------------------------"
 echo
