@@ -51,23 +51,23 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/ajeetdsouza/zoxide/v0.9.7/zoxide-0.9.7-aarch64-apple-darwin.tar.gz",
-      "checksum": "4CE19AD9EA0FDF92265EF73B1CB38C605FBCCFDA815157C1E99C0AF99115C4E4",
+      "id": "github_release/github.com/ajeetdsouza/zoxide/v0.9.8/zoxide-0.9.8-aarch64-apple-darwin.tar.gz",
+      "checksum": "3D1EC4AF7F3D351629F500B432E6C735CAF3216AB3EAA76DBE8FFBC8F3006F5A",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/ajeetdsouza/zoxide/v0.9.7/zoxide-0.9.7-aarch64-unknown-linux-musl.tar.gz",
-      "checksum": "B8BA8EBD40B37D543480C25B4D66900FFEF1A99D06119AFAA89A587873BDA77F",
+      "id": "github_release/github.com/ajeetdsouza/zoxide/v0.9.8/zoxide-0.9.8-aarch64-unknown-linux-musl.tar.gz",
+      "checksum": "078CC9CC8CEDB6C45EDB84C0F5BAD53518C610859C73BDB3009A52B89652C103",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/ajeetdsouza/zoxide/v0.9.7/zoxide-0.9.7-x86_64-apple-darwin.tar.gz",
-      "checksum": "7D8C960455E0F84638AE881A9117EFAE9DBBAF511BD4AF85A68696578A15B232",
+      "id": "github_release/github.com/ajeetdsouza/zoxide/v0.9.8/zoxide-0.9.8-x86_64-apple-darwin.tar.gz",
+      "checksum": "CFA865FFD1BA87DF2962F40EBD80C366F1D2B484F0C05B6DA6B0104F50822F86",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/ajeetdsouza/zoxide/v0.9.7/zoxide-0.9.7-x86_64-unknown-linux-musl.tar.gz",
-      "checksum": "EE53A42C11FE8A175EF7B136BB91F588AEF76E1AE7133E58A695B1199588EE7E",
+      "id": "github_release/github.com/ajeetdsouza/zoxide/v0.9.8/zoxide-0.9.8-x86_64-unknown-linux-musl.tar.gz",
+      "checksum": "4092EE38AA1EFDE42E4EFB2F9C872DF5388198AACAE7F1A74E5EB5C3CC7F531C",
       "algorithm": "sha256"
     },
     {
@@ -316,43 +316,43 @@
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/grafana/loki/v3.3.2/logcli-darwin-amd64.zip",
-      "checksum": "0448340622930608AAB1F38F60D49CDB42B506BB91CC1BA6D4218CE7DB62FF69",
+      "id": "github_release/github.com/grafana/loki/v3.5.1/logcli-darwin-amd64.zip",
+      "checksum": "C6FD243FA8539B455EA7C10C9CF0AFC91D2E924E689DA85081FFC8388B08A3E0",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/grafana/loki/v3.3.2/logcli-darwin-arm64.zip",
-      "checksum": "F9DC1ABB7F01766D49179AA18FE542EE8E802F9B230305EF0CDB681ED96D6624",
+      "id": "github_release/github.com/grafana/loki/v3.5.1/logcli-darwin-arm64.zip",
+      "checksum": "3A41B6ABC0643A3192318EF00FA746ECE808A37ADA02C3C686DDA31EA49100E9",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/grafana/loki/v3.3.2/logcli-linux-amd64.zip",
-      "checksum": "E01F9AAAAB9BDD1EA3211850C6D4219BA33CDADB013B518DBCF387DFFBEFEE23",
+      "id": "github_release/github.com/grafana/loki/v3.5.1/logcli-linux-amd64.zip",
+      "checksum": "FBB3CCC3EDFAF14610DE6FDD07432736732BD9DFBD609DFACAA3435D2A4E5835",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/grafana/loki/v3.3.2/logcli-linux-arm64.zip",
-      "checksum": "ED703DFBFBB85335B05BCA0BBF770A635FBC528AC4612BAAFC5271DD68E487CB",
+      "id": "github_release/github.com/grafana/loki/v3.5.1/logcli-linux-arm64.zip",
+      "checksum": "D93268DC25E481C4407C968C631223EABD414327DBD622C78CEDE70668EC164E",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/grafana/mimir/mimir-2.14.2/mimirtool-darwin-amd64",
-      "checksum": "B17DA98F3615B174527019A11CC95B6E6CC2A4FE506BA89D3612A4EB1963C051",
+      "id": "github_release/github.com/grafana/mimir/mimir-2.16.0/mimirtool-darwin-amd64",
+      "checksum": "EADFBADB8DE1ACD9D1AF1E1DE80B5B19A78B3B447BF277EA4C0DA5B7927469C8",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/grafana/mimir/mimir-2.14.2/mimirtool-darwin-arm64",
-      "checksum": "ED0060917D47062DFCA33E9D9E9E586B6F0A33D215CAEDC5D7666DC22C668C8A",
+      "id": "github_release/github.com/grafana/mimir/mimir-2.16.0/mimirtool-darwin-arm64",
+      "checksum": "E866CC5B25BC4DB085C94D0755C58EA5692ADBA4C035DE90B0BD0E55BC9E45D3",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/grafana/mimir/mimir-2.14.2/mimirtool-linux-amd64",
-      "checksum": "2BA4CC413B64D7175B3DE5E079F57226D6285B1A6C8D9ACB6DD835D1A85FE3F5",
+      "id": "github_release/github.com/grafana/mimir/mimir-2.16.0/mimirtool-linux-amd64",
+      "checksum": "65AA3F195371AED0D0B69D7CE71AD3F24FCBFB440F3A4F0D5077C8951E95D43E",
       "algorithm": "sha256"
     },
     {
-      "id": "github_release/github.com/grafana/mimir/mimir-2.14.2/mimirtool-linux-arm64",
-      "checksum": "7F1145DC8E1BD29AEF18F7A73AFE90A99034225C0090205EA9F1FB342E1830C4",
+      "id": "github_release/github.com/grafana/mimir/mimir-2.16.0/mimirtool-linux-arm64",
+      "checksum": "9411579347821E81F711554244E27321A34BED35B00AF983125D89D43533EDD0",
       "algorithm": "sha256"
     },
     {
@@ -706,43 +706,43 @@
       "algorithm": "sha256"
     },
     {
-      "id": "http/dl.k8s.io/v1.32.5/bin/darwin/amd64/kubectl",
-      "checksum": "F357D30FC338EB914E6E7A5E0408852D3011FAC18D98F4484C4861C4C2CEAD3C",
+      "id": "http/dl.k8s.io/v1.33.1/bin/darwin/amd64/kubectl",
+      "checksum": "8D36A5C66142547AD16E332942FD16A0CA2B3346D9EBAAB6C348DE2C70D9D875",
       "algorithm": "sha256"
     },
     {
-      "id": "http/dl.k8s.io/v1.32.5/bin/darwin/arm64/kubectl",
-      "checksum": "B3B08783545E735B030376627133DDF53DC0E2C2ED4C413D87D4BCD7C2B0C632",
+      "id": "http/dl.k8s.io/v1.33.1/bin/darwin/arm64/kubectl",
+      "checksum": "8AE6823839993BB2E394C3CF1919748E530642C625DC9100159595301F53BDEB",
       "algorithm": "sha256"
     },
     {
-      "id": "http/dl.k8s.io/v1.32.5/bin/linux/amd64/kubectl",
-      "checksum": "AAA7E6FF3BD28C262F2D95C8C967597E097B092E9B79BCB37DE699E7488E3E7B",
+      "id": "http/dl.k8s.io/v1.33.1/bin/linux/amd64/kubectl",
+      "checksum": "5DE4E9F2266738FD112B721265A0C1CD7F4E5208B670F811861F699474A100A3",
       "algorithm": "sha256"
     },
     {
-      "id": "http/dl.k8s.io/v1.32.5/bin/linux/arm64/kubectl",
-      "checksum": "9EDEE84103E63C40A37CD15BD11E04E7835F65CB3FF5A50972058FFC343B4D96",
+      "id": "http/dl.k8s.io/v1.33.1/bin/linux/arm64/kubectl",
+      "checksum": "D595D1A26B7444E0BEB122E25750EE4524E74414BBDE070B672B423139295CE6",
       "algorithm": "sha256"
     },
     {
-      "id": "http/get.helm.sh/helm-v3.18.0-darwin-amd64.tar.gz",
-      "checksum": "2BE99836549413C2F0212D644E8740ABD8BA5D7F55484C29D3363CEA339891D9",
+      "id": "http/get.helm.sh/helm-v3.18.1-darwin-amd64.tar.gz",
+      "checksum": "3973BDA1863D74614E1DCA69EE65050928A80B88F6D10EC514FA7886A02DE309",
       "algorithm": "sha256"
     },
     {
-      "id": "http/get.helm.sh/helm-v3.18.0-darwin-arm64.tar.gz",
-      "checksum": "4CE30BD86A3FC4F31D297827A5BF5B10CED8C4DA2FF810BF9F53F561DBED7D10",
+      "id": "http/get.helm.sh/helm-v3.18.1-darwin-arm64.tar.gz",
+      "checksum": "93562D2A0E34A505954E5B9556E319F390BC5BD07BED754DDC038B09CFE6FBD9",
       "algorithm": "sha256"
     },
     {
-      "id": "http/get.helm.sh/helm-v3.18.0-linux-amd64.tar.gz",
-      "checksum": "961E587FC2C03807F8A99AC25EF063FA9E6915F1894729399CBB95D2A79AF931",
+      "id": "http/get.helm.sh/helm-v3.18.1-linux-amd64.tar.gz",
+      "checksum": "B1C7E8E261FD30F34C617282813ECAFC63628FCD59A255A9FC51B1FE43394C05",
       "algorithm": "sha256"
     },
     {
-      "id": "http/get.helm.sh/helm-v3.18.0-linux-arm64.tar.gz",
-      "checksum": "489C9D2D3EA4E095331249D74B4407FB5AC1D338C28429D70CDEDCCFE6E2B029",
+      "id": "http/get.helm.sh/helm-v3.18.1-linux-arm64.tar.gz",
+      "checksum": "5DDC8FBD4B17857754A95BE799543CEAFA5AA9532B05F738EE590A76BB049988",
       "algorithm": "sha256"
     },
     {

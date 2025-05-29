@@ -50,7 +50,7 @@ packages:
 - name: derailed/k9s@v0.50.6
   tags:
   - standard
-- name: eza-community/eza@0.21.3
+- name: eza-community/eza@v0.21.3
   tags:
   - optional
 - name: fastfetch-cli/fastfetch@2.44.0
