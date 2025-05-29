@@ -7,14 +7,6 @@ aqua_install() {
     log_error "CLI Tools | Tags[${tags}] | Aqua binary is not in path, cannot proceed!"
     exit 1
   fi
-  if [[ ! -e "$AQUA_GLOBAL_CONFIG" ]]; then
-    log_error "CLI Tools | Tags[${tags}] | Global aqua configuration does not exist, cannot proceed!"
-    exit 1
-  fi
-  if [[ -e "$AQUA_POLICY_CONFIG" ]]; then
-    log_info "CLI Tools | Tags[${tags}] | Allowing aqua policy file: $AQUA_POLICY_CONFIG..."
-    aqua policy allow $AQUA_POLICY_CONFIG
-  fi
   log_info "CLI Tools | Tags[${tags}] | Installing or upgrading aqua packages..."
   aqua install --all --tags $tags 2>&1 | sed -E 's|^(.*)|  \1|g'
   log_success "CLI Tools | Tags[${tags}] | Aqua install is complete."
