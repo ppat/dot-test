@@ -8,7 +8,9 @@ aqua_install() {
     exit 1
   fi
   log_info "CLI Tools | Tags[${tags}] | Installing or upgrading aqua packages..."
+  set -x
   aqua install --all --tags $tags 2>&1 | sed -E 's|^(.*)|  \1|g'
+  set +x
   log_success "CLI Tools | Tags[${tags}] | Aqua install is complete."
   echo
   log_info "CLI Tools | Tags[${tags}] | Display installed packages..."
