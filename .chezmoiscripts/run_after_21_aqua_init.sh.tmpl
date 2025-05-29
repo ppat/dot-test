@@ -1,5 +1,5 @@
 #!/bin/bash
-set -euo pipefail
+set -eo pipefail
 
 {{ template "script_header.sh" . }}
 {{ template "aqua_install.sh" . }}
@@ -9,11 +9,9 @@ if [[ ! -e "$AQUA_GLOBAL_CONFIG" ]]; then
   log_error "CLI Tools | Tags[${tags}] | Global aqua configuration does not exist, cannot proceed!"
   exit 1
 fi
-if [[ ! -z "$AQUA_POLICY_CONFIG" ]]; then
-  if [[ -e "$AQUA_POLICY_CONFIG" ]]; then
-    log_info "CLI Tools | Tags[${tags}] | Allowing aqua policy file: $AQUA_POLICY_CONFIG..."
-    aqua policy allow $AQUA_POLICY_CONFIG
-  fi
+if [[ ! -z "$AQUA_POLICY_CONFIG" && -e "$AQUA_POLICY_CONFIG" ]]; then
+  log_info "CLI Tools | Tags[${tags}] | Allowing aqua policy file: $AQUA_POLICY_CONFIG..."
+  aqua policy allow $AQUA_POLICY_CONFIG
 fi
 aqua_install standard
 echo "-------------------------------------------------------------------------------------------"
