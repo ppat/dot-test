@@ -6,13 +6,13 @@ set -eo pipefail
 
 log_info "CLI Tools | Performing aqua standard setup..."
 if [[ ! -e "$AQUA_GLOBAL_CONFIG" ]]; then
-  log_error "CLI Tools | Tags[${tags}] | Global aqua configuration does not exist, cannot proceed!"
+  log_error "CLI Tools | Tags[baseline] | Global aqua configuration does not exist, cannot proceed!"
   exit 1
 fi
 if [[ ! -z "$AQUA_POLICY_CONFIG" && -e "$AQUA_POLICY_CONFIG" ]]; then
-  log_info "CLI Tools | Tags[${tags}] | Allowing aqua policy file: $AQUA_POLICY_CONFIG..."
+  log_info "CLI Tools | Tags[baseline] | Allowing aqua policy file: $AQUA_POLICY_CONFIG..."
   aqua policy allow $AQUA_POLICY_CONFIG
 fi
-aqua_install standard
+aqua_install baseline
 echo "-------------------------------------------------------------------------------------------"
 echo

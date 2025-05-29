@@ -26,39 +26,39 @@ packages:
   - optional
 - name: atuinsh/atuin@v18.6.1
   tags:
-  - standard
+  - baseline
 - name: bitwarden/clients@cli-v2025.4.0
   tags:
-  - standard
+  - baseline
 - name: bitwarden/sdk-sm@bws-v1.0.0
   tags:
-  - standard
+  - baseline
   - prerequisites
 - name: bootandy/dust@v1.2.0
   tags:
-  - standard
+  - baseline
 - name: cli/cli@v2.73.0
   tags:
-  - standard
+  - baseline
   - prerequisites
 - name: dalance/procs@v0.14.10
   tags:
-  - standard
+  - baseline
 - name: dandavison/delta@0.18.2
   tags:
-  - standard
+  - baseline
 - name: derailed/k9s@v0.50.6
   tags:
-  - standard
+  - baseline
 - name: eza-community/eza@v0.21.3
   tags:
   - optional
 - name: fastfetch-cli/fastfetch@2.44.0
   tags:
-  - optional
+  - baseline
 - name: fluxcd/flux2@v2.5.1
   tags:
-  - standard
+  - baseline
 - name: getsops/sops@v3.10.2
   tags:
   - optional
@@ -70,10 +70,10 @@ packages:
   - optional
 - name: hadolint/hadolint@v2.12.0
   tags:
-  - standard
+  - baseline
 - name: helm/helm@v3.18.1
   tags:
-  - standard
+  - baseline
 - name: jesseduffield/lazygit@v0.51.1
   tags:
   - optional
@@ -82,45 +82,45 @@ packages:
   - optional
 - name: koalaman/shellcheck@v0.10.0
   tags:
-  - standard
+  - baseline
 - name: kubernetes/kubectl@v1.33.1
   tags:
-  - standard
+  - baseline
 - name: kubernetes-sigs/kind@v0.29.0
   tags:
-  - standard
+  - baseline
 - name: kubernetes-sigs/krew@v0.4.5
   command_aliases:
   - command: krew
     alias: kubectl-krew
   tags:
-  - standard
+  - baseline
 - name: kubernetes-sigs/kustomize@kustomize/v5.6.0
   tags:
-  - standard
+  - baseline
 - name: kyverno/chainsaw@v0.2.12
   tags:
-  - standard
+  - baseline
 - name: mikefarah/yq@v4.45.4
   tags:
-  - standard
+  - baseline
   - prerequisites
 - name: muesli/duf@v0.8.1
   tags:
-  - standard
+  - baseline
 - name: nektos/act@v0.2.77
   tags:
   - optional
 # - name: qarmin/czkawka@9.0.0
 - name: rhysd/actionlint@v1.7.7
   tags:
-  - standard
+  - baseline
 - name: sharkdp/bat@v0.25.0
   tags:
-  - standard
+  - baseline
 - name: sharkdp/fd@v10.2.0
   tags:
-  - standard
+  - baseline
 - name: sharkdp/hyperfine@v1.19.0
   tags:
   - optional
@@ -130,13 +130,13 @@ packages:
 # - name: sigstore/cosign@v2.4.2
 - name: terraform-linters/tflint@v0.58.0
   tags:
-  - standard
+  - baseline
 - name: yannh/kubeconform@v0.7.0
   tags:
-  - standard
+  - baseline
 - name: BurntSushi/ripgrep@14.1.1
   tags:
-  - standard
+  - baseline
 - name: FiloSottile/age@v1.2.1
   tags:
   - optional
