@@ -4,16 +4,6 @@ set -eo pipefail
 {{ template "script_header.sh" . }}
 {{ template "aqua_install.sh" . }}
 
-log_info "CLI Tools | Tags[baseline] | Initializing Aqua..."
-if ! command -v aqua > /dev/null; then
-  log_error "CLI Tools | Tags[baseline] | Aqua binary is not in path, cannot proceed!"
-  exit 1
-fi
-log_info "CLI Tools | Tags[baseline] | Installing or upgrading aqua packages..."
-aqua install --tags baseline 2>&1 | sed -E 's|^(.*)|  \1|g'
-log_success "CLI Tools | Tags[baseline] | Aqua install is complete."
-echo
-log_info "CLI Tools | Tags[baseline] | Display installed packages..."
-aqua list --installed --all | column -t 2>&1 | sed -E 's|^(.*)|  \1|g'  
+aqua_install
 echo "-------------------------------------------------------------------------------------------"
 echo
