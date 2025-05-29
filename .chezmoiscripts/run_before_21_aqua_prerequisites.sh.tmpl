@@ -4,7 +4,9 @@ set -euo pipefail
 {{ template "script_header.sh" . }}
 {{ template "aqua_install.sh" . }}
 
-log_info "CLI Tools | Performing aqua standard setup..."
+log_info "CLI Tools | Performing aqua prerequisites setup..."
+
+cd {{ .chezmoi.sourceDir }}/dot_config/aquaproj-aqua
 aqua_install prerequisites
 echo "-------------------------------------------------------------------------------------------"
 echo
