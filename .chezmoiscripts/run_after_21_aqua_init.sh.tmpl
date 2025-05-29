@@ -13,6 +13,6 @@ if [[ ! -z "$AQUA_POLICY_CONFIG" && -e "$AQUA_POLICY_CONFIG" ]]; then
   log_info "CLI Tools | Tags[baseline] | Allowing aqua policy file: $AQUA_POLICY_CONFIG..."
   aqua policy allow $AQUA_POLICY_CONFIG
 fi
-aqua_install baseline
+aqua_install optional
 echo "-------------------------------------------------------------------------------------------"
 echo

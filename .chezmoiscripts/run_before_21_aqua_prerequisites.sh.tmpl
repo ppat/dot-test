@@ -7,6 +7,6 @@ set -euo pipefail
 log_info "CLI Tools | Performing aqua prerequisites setup..."
 
 cd {{ .chezmoi.sourceDir }}/dot_config/aquaproj-aqua
-aqua_install prerequisites
+aqua_install baseline,optional
 echo "-------------------------------------------------------------------------------------------"
 echo
