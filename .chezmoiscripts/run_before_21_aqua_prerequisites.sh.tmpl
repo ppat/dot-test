@@ -4,9 +4,18 @@ set -euo pipefail
 {{ template "script_header.sh" . }}
 {{ template "aqua_install.sh" . }}
 
-cp {{ .chezmoi.sourceDir }}/aqua-first.yaml /tmp/aqua.yaml
-cd /tmp
-aqua_install
-rm /tmp/aqua.yaml
+aqua_first_time_setup() {
+  cp {{ .chezmoi.sourceDir }}/aqua-first.yaml /tmp/aqua.yaml
+  cd /tmp
+  aqua_install
+  rm /tmp/aqua.yaml
+}
+
+if [[ -f $HOME/.config/aquaproj-aqua/aqua.yaml && -d $HOME/.local/share/aquaproj-aqua ]]; then 
+  log_info "CLI Tools | Aqua has previously been setup, skipping first time setup..."
+else
+  log_info "CLI Tools | Aqua has not previously been setup, performing first time setup..."
+  aqua_first_time_setup
+fi
 echo "-------------------------------------------------------------------------------------------"
 echo
