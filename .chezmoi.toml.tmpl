@@ -1,15 +1,15 @@
 # Chezmoi configuration file
 
 # Define variables in global scope
-{{- $gitName := promptString "Enter your full name for Git" -}}
-{{- $gitEmail := promptString "Enter your email for Git" -}}
+{{- $gitName := promptStringOnce . "name" "Enter your full name for Git" -}}
+{{- $gitEmail := promptStringOnce . "email" "Enter your email for Git" -}}
 {{- $editor := or (env "EDITOR") "vim" -}}
 
 # Set values in the data section
 [data]
-    name = "{{ $gitName }}"
-    email = "{{ $gitEmail }}"
-    editor = "{{ $editor }}"
+    name = {{ $gitName | quote }}
+    email = {{ $gitEmail | quote }}
+    editor = {{ $editor | quote }}
 
 [diff]
     command = "diff"
