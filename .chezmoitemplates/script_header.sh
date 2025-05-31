@@ -21,6 +21,9 @@ set -o allexport
 if [[ -e $HOME/.env ]]; then
   . $HOME/.env  
 fi
+if [[ -e $HOME/.env.secrets ]]; then
+  . $HOME/.env.secrets
+fi
 if [[ -e $HOME/.env.overrides ]]; then
   . $HOME/.env.overrides
 fi
